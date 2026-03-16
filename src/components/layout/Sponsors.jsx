@@ -46,7 +46,14 @@ export default function Sponsors() {
             <div className="relative space-y-2 z-10">
               <div className="flex flex-col gap-6 items-center">
                 <h4 className="uppercase text-xl md:text-3xl text-[#333E48]">Interested in sponsoring this event<span className="block">& support our community?</span></h4>
-                <a href="mailto:Info@awsday.ca" className="h-10 px-4 py-2 rounded text-primary-foreground text-white bg-[#333E48] hover:bg-[#FF9900] max-w-64" >Learn About Sponsoring</a>
+                <a
+                  href="https://tally.so/r/mR6zPQ"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="h-10 px-4 py-2 rounded text-primary-foreground text-white bg-[#333E48] hover:bg-[#FF9900] max-w-64"
+                >
+                  Learn About Sponsoring
+                </a>
               </div>
             </div>
           </div>
