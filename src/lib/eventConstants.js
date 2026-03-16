@@ -199,6 +199,11 @@ export const AWS_EVENT_CONFIG = {
                     href: "https://tally.so/r/mR6zPQ",
                     external: true,
                 },
+                {
+                    name: "Enter Hackathon",
+                    href: "https://hackerrivals.com/",
+                    external: true,
+                },
                 // { name: "FAQ", href: "#", external: false },
             ],
             policies: [
