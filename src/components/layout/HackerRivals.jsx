@@ -28,7 +28,7 @@ function HackerRivals() {
             {/* Description */}
             <p className="text-gray-600 text-base leading-relaxed mb-6 px-4">
               Apply as a solo builder or a team and compete in the hackathon for a
-              chance to win the $1000 cash prize.
+              chance to win a cash prize.
             </p>
 
             {/* CTA Button */}
@@ -68,7 +68,7 @@ function HackerRivals() {
             {/* Description */}
             <p className="text-gray-600 text-base lg:text-lg leading-relaxed mb-4 lg:mb-6">
               Apply as a solo builder or a team and compete in the hackathon for a
-              chance to win the $1000 cash prize.
+              chance to win a cash prize.
             </p>
 
             {/* CTA Button */}
