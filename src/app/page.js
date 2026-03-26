@@ -45,7 +45,6 @@ export default function Home() {
       <Hero />
       <main className="flex-1 bg-white -z-10">
         <Activities />
-        {/* <Schedule></Schedule> */}
         <NewSchedule></NewSchedule>
         <HackerRivals />
         <Charity />
