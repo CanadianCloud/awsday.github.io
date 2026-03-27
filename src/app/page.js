@@ -10,7 +10,8 @@ import Footer from "@/components/layout/Footer";
 import About from "@/components/layout/About";
 import NonProfit from "@/components/layout/NonProfit";
 import Charity from "@/components/layout/Charity";
-
+import Schedule from "@/components/layout/Schedule";
+import { NewSchedule } from "@/components/layout/NewSchedule";
 
 const useWindowSize = () => {
   const [windowSize, setWindowSize] = useState({
@@ -44,6 +45,7 @@ export default function Home() {
       <Hero />
       <main className="flex-1 bg-white -z-10">
         <Activities />
+        <NewSchedule></NewSchedule>
         <HackerRivals />
         <Charity />
         <Sponsors />
