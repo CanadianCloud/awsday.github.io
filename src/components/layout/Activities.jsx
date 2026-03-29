@@ -5,6 +5,7 @@ import { InstagramCarousel } from '../ui/instagram-carousel'
 import { AWS_EVENT_CONFIG } from '@/lib/eventConstants'
 import { useTally } from '@/hooks/useTally'
 import About from './About';
+import { Computer, Gamepad2, Handshake, Mic2Icon, Sofa, UsersRound } from 'lucide-react'
 
 export default function Activities() {
     const activitiesRef = useRef([]);
@@ -32,28 +33,44 @@ export default function Activities() {
 
     const activities = [
         {
-            icon: "/activities/activity-icon-1.svg",
+            // icon: "/activities/activity-icon-1.svg",
+            icon: <Mic2Icon></Mic2Icon>, 
             title: "Main Stage Speaker",
             description: "Hear from top AWS experts and industry leaders",
             color: "#01A88D"
         },
         {
-            icon: "/activities/activity-icon-2.svg",
+            // icon: "/activities/activity-icon-2.svg",
+            icon: <Sofa></Sofa>,
             title: "Talks",
             description: "Explore real-world cloud stories and insights",
             color: "#C925D1"
         },
         {
-            icon: "/activities/activity-icon-5.svg",
+            // icon: "/activities/activity-icon-5.svg",
+            icon: <Gamepad2></Gamepad2>,
             title: "E-Sports Hackathon",
             description: "Witness high-energy coding competitions",
             color: "#ED7100"
         },
         {
-            icon: "/activities/activity-icon-6.svg",
+            // icon: "/activities/activity-icon-6.svg",
+            icon: <UsersRound></UsersRound>,
             title: "Chill & Connect Zone",
             description: "Unwind and network with fellow builders",
             color: "#8C4FFF"
+        },
+        {
+            icon: <Handshake></Handshake>,
+            title: "Meet Tech Companies",
+            description: "Find out cutting-edge solutions and services in cloud technology",
+            color: ""
+        },
+        {
+            icon: <Computer></Computer>,
+            title: "Intense Competition",
+            description: "Watch in real-time as teams of developers build and ship rapidly",
+            color: ""
         }
     ];
 
@@ -102,13 +119,14 @@ export default function Activities() {
                                         </div>
                                         {/* Icon on right */}
                                         <div className="flex-shrink-0">
-                                            <Image
+                                            {/* <Image
                                                 src={activity.icon}
                                                 alt={activity.title}
                                                 width={200}
                                                 height={200}
                                                 className="w-40 h-40 "
-                                            />
+                                            /> */}
+                                            {activity.icon}
                                         </div>
                                     </div>
                                 ) : (
@@ -116,13 +134,14 @@ export default function Activities() {
                                     <div className="flex items-center gap-4 p-4 mb-1">
                                         {/* Icon on left */}
                                         <div className="flex-shrink-0">
-                                            <Image
+                                            {/* <Image
                                                 src={activity.icon}
                                                 alt={activity.title}
                                                 width={200}
                                                 height={200}
                                                 className="w-40 h-40"
-                                            />
+                                            /> */}
+                                            {activity.icon}
                                         </div>
                                         {/* Text Content */}
                                         <div className="flex-1 text-left">
@@ -149,13 +168,14 @@ export default function Activities() {
                             >
                                 <div className="flex-shrink-0">
                                     <div className="relative">
-                                        <Image
+                                        {/* <Image
                                             src={activity.icon}
                                             alt={activity.title}
                                             width={100}
                                             height={100}
                                             className="w-20 h-20"
-                                        />
+                                        /> */}
+                                        {activity.icon}
                                         {/* Dotted line for mobile */}
                                         {index < activities.length - 1 && (
                                             <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0.5 h-8 border-l-2 border-dotted border-gray-400"></div>
