@@ -10,7 +10,7 @@ import Footer from "@/components/layout/Footer";
 import About from "@/components/layout/About";
 import NonProfit from "@/components/layout/NonProfit";
 import Charity from "@/components/layout/Charity";
-
+import { CurrentSponsors } from "@/components/layout/CurrentSponsors";
 
 const useWindowSize = () => {
   const [windowSize, setWindowSize] = useState({
@@ -46,6 +46,7 @@ export default function Home() {
         <Activities />
         <HackerRivals />
         <Charity />
+        <CurrentSponsors></CurrentSponsors>
         <Sponsors />
         <NonProfit />
       </main>
