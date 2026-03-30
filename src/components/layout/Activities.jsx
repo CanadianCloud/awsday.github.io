@@ -5,6 +5,7 @@ import { InstagramCarousel } from '../ui/instagram-carousel'
 import { AWS_EVENT_CONFIG } from '@/lib/eventConstants'
 import { useTally } from '@/hooks/useTally'
 import About from './About';
+import { Computer, Gamepad2, Handshake, Mic2Icon, Sofa, UsersRound } from 'lucide-react'
 
 export default function Activities() {
     const activitiesRef = useRef([]);
@@ -32,28 +33,44 @@ export default function Activities() {
 
     const activities = [
         {
-            icon: "/activities/activity-icon-1.svg",
+            // icon: "/activities/activity-icon-1.svg",
+            icon: <Mic2Icon className='size-12'></Mic2Icon>, 
             title: "Main Stage Speaker",
             description: "Hear from top AWS experts and industry leaders",
             color: "#01A88D"
         },
         {
-            icon: "/activities/activity-icon-2.svg",
+            // icon: "/activities/activity-icon-2.svg",
+            icon: <Sofa className='size-12'></Sofa>,
             title: "Talks",
             description: "Explore real-world cloud stories and insights",
             color: "#C925D1"
         },
         {
-            icon: "/activities/activity-icon-5.svg",
+            // icon: "/activities/activity-icon-5.svg",
+            icon: <Gamepad2 className='size-12'></Gamepad2>,
             title: "E-Sports Hackathon",
             description: "Witness high-energy coding competitions",
             color: "#ED7100"
         },
         {
-            icon: "/activities/activity-icon-6.svg",
+            // icon: "/activities/activity-icon-6.svg",
+            icon: <UsersRound className='size-12'></UsersRound>,
             title: "Chill & Connect Zone",
             description: "Unwind and network with fellow builders",
             color: "#8C4FFF"
+        },
+        {
+            icon: <Handshake className='size-12'></Handshake>,
+            title: "Meet Tech Companies",
+            description: "Find out cutting-edge solutions and services in cloud technology",
+            color: "#d19d1d"
+        },
+        {
+            icon: <Computer className='size-12'></Computer>,
+            title: "Intense Competition",
+            description: "Watch in real-time as teams of developers build and ship rapidly",
+            color: "#2042e5"
         }
     ];
 
@@ -72,109 +89,16 @@ export default function Activities() {
 
             <About />
 
-            <div className="container px-4 md:px-6 m-auto max-w-6xl">
-                <div className="text-center mb-12 md:mb-16">
-                    <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-[48px] font-heroDate font-extrabold leading-none text-text-primary mb-4">
-                        2026 ACTIVITIES
-                    </h2>
-                </div>
-
-                <div className="relative">
-                    {/* Desktop Grid Layout */}
-                    <div className="hidden md:grid md:grid-cols-2 md:gap-1">
-                        {activities.map((activity, index) => (
-                            <div
-                                key={index}
-                                className="relative opacity-0 translate-y-8 transition-all duration-700 ease-out"
-                                ref={(el) => activitiesRef.current[index] = el}
-                            >
-                                {/* Left column: text-left, icon-right */}
-                                {index % 2 === 0 ? (
-                                    <div className="flex items-center gap-4 p-4 mb-1">
-                                        {/* Text Content */}
-                                        <div className="flex-1 text-right">
-                                            <h3 className="text-xl lg:text-3xl xl:text-4xl font-heading font-extrabold mb-1" style={{ color: activity.color }}>
-                                                {activity.title}
-                                            </h3>
-                                            <p className="text-gray-600 text-xl ">
-                                                {activity.description}
-                                            </p>
-                                        </div>
-                                        {/* Icon on right */}
-                                        <div className="flex-shrink-0">
-                                            <Image
-                                                src={activity.icon}
-                                                alt={activity.title}
-                                                width={200}
-                                                height={200}
-                                                className="w-40 h-40 "
-                                            />
-                                        </div>
-                                    </div>
-                                ) : (
-                                    /* Right column: icon-left, text-right */
-                                    <div className="flex items-center gap-4 p-4 mb-1">
-                                        {/* Icon on left */}
-                                        <div className="flex-shrink-0">
-                                            <Image
-                                                src={activity.icon}
-                                                alt={activity.title}
-                                                width={200}
-                                                height={200}
-                                                className="w-40 h-40"
-                                            />
-                                        </div>
-                                        {/* Text Content */}
-                                        <div className="flex-1 text-left">
-                                            <h3 className="text-xl lg:text-3xl xl:text-4xl font-heading font-extrabold mb-1" style={{ color: activity.color }}>
-                                                {activity.title}
-                                            </h3>
-                                            <p className="text-gray-600 text-xl ">
-                                                {activity.description}
-                                            </p>
-                                        </div>
-                                    </div>
-                                )}
-                            </div>
-                        ))}
+            <div className='text-center md:grid md:grid-cols-3 mt-8 mb-8'>
+                {activities.map((activity) => {
+                    return <div className='flex flex-col items-center m-2'>
+                        {activity.icon}
+                        <h3 className="text-xl lg:text-3xl xl:text-4xl font-heading font-extrabold mb-1" style={{ color: activity.color }}>{activity.title}</h3>
+                        <p className="text-gray-600 text-xl ">{activity.description}</p>
                     </div>
-
-                    {/* Mobile Layout */}
-                    <div className="md:hidden space-y-8">
-                        {activities.map((activity, index) => (
-                            <div
-                                key={`mobile-${index}`}
-                                className="flex gap-4 opacity-0 translate-y-8 transition-all duration-700 ease-out"
-                                ref={(el) => activitiesRef.current[index + activities.length] = el}
-                            >
-                                <div className="flex-shrink-0">
-                                    <div className="relative">
-                                        <Image
-                                            src={activity.icon}
-                                            alt={activity.title}
-                                            width={100}
-                                            height={100}
-                                            className="w-20 h-20"
-                                        />
-                                        {/* Dotted line for mobile */}
-                                        {index < activities.length - 1 && (
-                                            <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0.5 h-8 border-l-2 border-dotted border-gray-400"></div>
-                                        )}
-                                    </div>
-                                </div>
-                                <div className="flex-1">
-                                    <h3 className="text-lg sm:text-xl md:text-2xl font-heading font-extrabold mb-1" style={{ color: activity.color }}>
-                                        {activity.title}
-                                    </h3>
-                                    <p className="text-gray-600 text-sm">
-                                        {activity.description}
-                                    </p>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
+                })}
             </div>
+            
             <InstagramCarousel />
             <div className='flex flex-col items-center'>
                 <h4 className='font-bold uppercase text-xl px-2 text-center md:text-5xl'>{AWS_EVENT_CONFIG.sections.about.motto}</h4>
