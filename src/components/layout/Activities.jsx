@@ -187,7 +187,7 @@ export default function Activities() {
                         data-tally-layout="modal"
                         className="md:h-10 px-4 py-1 md:py-2 rounded text-white bg-[#333E48] hover:bg-[#E88800] transition-colors"
                     >
-                        Learn More About Volunteer Opportunities
+                        Learn More About Committee and Volunteer Opportunities
                     </button>
                 </div>
             </div>

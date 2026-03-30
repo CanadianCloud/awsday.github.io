@@ -6,7 +6,7 @@ const LEGEND_ITEMS_BY_FLOOR = {
   2: [
     {
       iconSrc: '/event-map/icons/volunteers-lounge-restricted.png',
-      title: 'Volunteers lounge',
+      title: 'Committee and Volunteers Lounge',
       note: 'restricted access',
     },
     {

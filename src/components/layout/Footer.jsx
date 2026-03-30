@@ -52,6 +52,8 @@ const Footer = () => {
             <ul className="space-y-3">
               {[
                 { name: "Home", href: "#" },
+                { name: "Call for Speakers", href: "https://tally.so/r/rjBeN5", external: true },
+                { name: "Enter Hackathon", href: "https://hackerrivals.com/", external: true },
                 // { name: "Speakers", href: "#" },
                 // { name: "Schedule", href: "#" },
                 // { name: "Sponsors", href: "#" },
@@ -279,7 +281,7 @@ const ReusableModal = ({ triggerLabel, content }) => {
                 <p key={idx}>{para}</p>
               ))}
 
-              {/* Committee & Volunteers special rendering */}
+              {/* Committee and Volunteers special rendering */}
               {content.committee && (
                 <div className="space-y-4">
                   <div>

@@ -56,8 +56,8 @@ export const AWS_EVENT_CONFIG = {
       motto: 'By the community, for the community',
       cta: {
         type: 'phase1',
-        descrp: 'Interested in volunteering for AWS Community Day',
-        button: 'Learn More about Volunteer Opportunities',
+        descrp: 'Interested in Joining the Committee or Volunteering for AWS Community Day',
+        button: 'Learn More About Committee and Volunteer Opportunities',
         link: 'https://tally.so/r/waPdMy',
       },
     },
@@ -186,7 +186,7 @@ export const AWS_EVENT_CONFIG = {
           external: true,
         },
         {
-          name: 'Become a Volunteer',
+          name: 'Committee and Volunteers',
           href: 'https://tally.so/r/waPdMy',
           external: true,
         },
@@ -232,11 +232,11 @@ export const AWS_EVENT_CONFIG = {
           },
         },
         {
-          name: 'Committee & Volunteers',
+          name: 'Committee and Volunteers',
           href: '#',
           external: false,
           modalContent: {
-            title: 'AWS Community Day 2025 - Committee & Volunteers',
+            title: 'AWS Community Day 2025 - Committee and Volunteers',
             body: [],
             committee: [
               {
