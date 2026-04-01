@@ -49,13 +49,11 @@ const Footer = () => {
           {/* Quick Links */}
           <div>
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
-            <ul className="space-y-3">
+            <ul className="grid grid-cols-2 gap-x-4 gap-y-3 md:grid-cols-1 md:gap-y-3">
               {[
-                { name: "Home", href: "#" },
-                // { name: "Speakers", href: "#" },
-                // { name: "Schedule", href: "#" },
-                // { name: "Sponsors", href: "#" },
-                // { name: "Location", href: "#" },
+                { name: "Home", href: "/" },
+                { name: "Schedule", href: "/#schedule", external: false },
+                { name: "Event Map", href: "/#event-map", external: false },
               ].map((item) => (
                 <NavItem key={item.name} {...item} />
               ))}
@@ -65,7 +63,7 @@ const Footer = () => {
           {/* Resources */}
           <div>
             <h4 className="text-lg font-semibold mb-4">Resources</h4>
-            <ul className="space-y-3">
+            <ul className="grid grid-cols-2 gap-x-4 gap-y-3 md:grid-cols-1 md:gap-y-3">
               {AWS_EVENT_CONFIG.sections.footer.quickLinks.map((item) => (
                 <NavItem key={item.name} {...item} />
               ))}
@@ -75,43 +73,44 @@ const Footer = () => {
           {/* Contact */}
           <div>
             <h4 className="text-lg font-semibold mb-4">Contact Us</h4>
-            <ul className="space-y-3 mb-6">
-              <li>
+            <ul className="grid grid-cols-2 gap-x-4 gap-y-3 md:grid-cols-1 md:gap-y-3 mb-6">
+              <li className="min-w-0">
                 <a
                   href="mailto:info@awsday.ca"
-                  className="text-gray-300 hover:text-white transition-colors flex items-center"
+                  className="text-gray-300 hover:text-white transition-colors flex items-start gap-2"
                 >
-                  <span className="w-1.5 h-1.5 bg-[#FF9900] rounded-full mr-2"></span>
-                  info@awsday.ca
+                  <span className="w-1.5 h-1.5 bg-[#FF9900] rounded-full mt-1.5 shrink-0"></span>
+                  <span className="min-w-0 break-words">info@awsday.ca</span>
                 </a>
               </li>
-              <li className="flex items-start">
+              <li className="min-w-0">
                 <a
                   href="https://www.canadiancloud.org/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-300 hover:text-white transition-colors flex items-start"
+                  className="text-gray-300 hover:text-white transition-colors flex items-start gap-2"
                 >
-                  <span className="w-1.5 h-1.5 bg-[#FF9900] rounded-full mr-2 mt-2 flex-shrink-0"></span>
-                  <span>Canadian Public Cloud Association</span>
+                  <span className="w-1.5 h-1.5 bg-[#FF9900] rounded-full mt-1.5 shrink-0"></span>
+                  <span className="min-w-0 break-words">Canadian Public Cloud Association</span>
                 </a>
               </li>
             </ul>
 
             <h4 className="text-lg font-semibold mb-4">Previous Years</h4>
-            <div className="space-y-2">
+            <div className="grid grid-cols-2 gap-x-4 gap-y-2 md:grid-cols-1 md:gap-y-2">
               <a
                 href="/past-events/2024/"
-                className="text-[#FF9900] hover:underline inline-flex items-center block"
+                className="text-[#FF9900] hover:underline inline-flex items-center min-w-0"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 2024 Event
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="h-4 w-4 ml-1"
+                  className="h-4 w-4 ml-1 shrink-0"
                   viewBox="0 0 20 20"
                   fill="currentColor"
+                  aria-hidden="true"
                 >
                   <path
                     fillRule="evenodd"
@@ -120,20 +119,19 @@ const Footer = () => {
                   />
                 </svg>
               </a>
-            </div>
-            <div className="space-y-2">
               <a
                 href="/past-events/2025/"
-                className="text-[#FF9900] hover:underline inline-flex items-center block"
+                className="text-[#FF9900] hover:underline inline-flex items-center min-w-0"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 2025 Event
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="h-4 w-4 ml-1"
+                  className="h-4 w-4 ml-1 shrink-0"
                   viewBox="0 0 20 20"
                   fill="currentColor"
+                  aria-hidden="true"
                 >
                   <path
                     fillRule="evenodd"
@@ -223,26 +221,29 @@ const SocialIcon = ({ href, label, iconPath }) => (
 );
 
 const NavItem = ({ name, href, external = false }) => (
-  <li>
+  <li className="min-w-0">
     <a
       href={href}
       target={external ? "_blank" : "_self"}
       rel={external ? "noopener noreferrer" : ""}
-      className="text-gray-300 hover:text-white transition-colors flex items-center"
+      className="text-gray-300 hover:text-white transition-colors flex items-start gap-2"
     >
-      <span className="w-1.5 h-1.5 bg-[#FF9900] rounded-full mr-2"></span>
-      {name}
-      {external && (
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="h-3 w-3 ml-1"
-          viewBox="0 0 20 20"
-          fill="currentColor"
-        >
-          <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
-          <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
-        </svg>
-      )}
+      <span className="w-1.5 h-1.5 bg-[#FF9900] rounded-full mt-1.5 shrink-0"></span>
+      <span className="min-w-0 inline-flex flex-wrap items-baseline gap-1">
+        <span className="break-words">{name}</span>
+        {external && (
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-3 w-3 shrink-0"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+            aria-hidden="true"
+          >
+            <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
+            <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
+          </svg>
+        )}
+      </span>
     </a>
   </li>
 );
@@ -279,7 +280,7 @@ const ReusableModal = ({ triggerLabel, content }) => {
                 <p key={idx}>{para}</p>
               ))}
 
-              {/* Committee & Volunteers special rendering */}
+              {/* Committee modal (committee list + thank you) */}
               {content.committee && (
                 <div className="space-y-4">
                   <div>
@@ -301,26 +302,7 @@ const ReusableModal = ({ triggerLabel, content }) => {
                     </ul>
                   </div>
 
-                  <div>
-                    <h3 className="font-bold text-base mb-2">Volunteers:</h3>
-                    <ul className="grid grid-cols-2 gap-x-4 gap-y-2">
-                      {[...content.volunteers].sort((a, b) => a.name.localeCompare(b.name)).map((volunteer, idx) => (
-                        <li key={idx} className="flex items-center">
-                          <span className="w-1.5 h-1.5 bg-[#FF9900] rounded-full mr-2 flex-shrink-0"></span>
-                          <a
-                            href={volunteer.linkedin}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-[#0077B5] hover:underline"
-                          >
-                            {volunteer.name}
-                          </a>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  <p className="text-center font-semibold mt-4">Thank you to everyone who made AWS Community Day 2025 possible!</p>
+                  <p className="text-center font-semibold mt-4">Thank you to everyone who made AWS Community Day 2026 possible!</p>
                 </div>
               )}
             </div>

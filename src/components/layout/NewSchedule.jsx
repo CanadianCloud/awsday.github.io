@@ -2,7 +2,7 @@ import { newSchedule } from "@/lib/newScheduleConstants";
 
 export function NewSchedule() {
   return (
-    <section className="">
+    <section id="schedule" className="">
       <h3 className="text-xl lg:text-3xl xl:text-4xl font-heading font-extrabold mb-1 text-center">
         Schedule
       </h3>

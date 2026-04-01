@@ -1,6 +1,7 @@
 import { Inter } from "next/font/google";
 import localFont from "next/font/local";
 import { cn } from "@/lib/utils";
+import { ScrollToHash } from "@/components/ScrollToHash";
 const inter = Inter({ subsets: ["latin"] });
 import "./globals.css";
 
@@ -44,6 +45,7 @@ export default function Layout({ children }) {
       <body
         className={cn("antialiased", fontHeading.variable, fontBody.variable, fontHeroDate.variable, fontHeroRegular.variable)}
       >
+        <ScrollToHash />
         {children}
       </body>
     </html>

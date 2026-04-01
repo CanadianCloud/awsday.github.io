@@ -106,7 +106,7 @@ export default function EventMap() {
   const legendItems = LEGEND_ITEMS_BY_FLOOR[selectedFloor] ?? [];
 
   return (
-    <div className='mt-14 pt-8 pb-12 md:pt-16 md:pb-16'>
+    <div id="event-map" className='mt-14 pt-8 pb-12 md:pt-16 md:pb-16'>
       <div className='container mx-auto px-4 md:px-6 lg:px-8 max-w-6xl'>
         <h2 className='text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-[48px] font-heroDate font-extrabold leading-none text-text-primary text-center mb-6 md:mb-12'>
           Event Map
