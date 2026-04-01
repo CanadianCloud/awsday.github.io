@@ -26,7 +26,7 @@ function Charity({ city }) {
 
         <div className='mb-8 md:mb-10'>
           <img
-            className='max-w-xs md:max-w-sm lg:max-w-md h-auto mx-auto'
+            className='max-w-[220px] sm:max-w-xs md:max-w-sm lg:max-w-md h-auto mx-auto'
             src={content.logoSrc}
             alt={content.logoAlt}
           />

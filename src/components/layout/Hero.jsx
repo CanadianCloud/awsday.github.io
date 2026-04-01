@@ -23,7 +23,7 @@ export default function Hero({ city }) {
       >
         <HeroClouds />
 
-        <div>
+        <div className="relative z-10 pt-10 sm:pt-12 md:pt-0">
           <h2 className="text-4xl md:text-6xl lg:text-8xl  font-heroDate font-extrabold mb-3 leading-none text-text-primary">
             Join the Community for a Packed Event
           </h2>
