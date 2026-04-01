@@ -465,22 +465,16 @@ export const AWS_EVENT_CONFIG = {
         team: 'webAndDesign',
       },
     ],
-    webMembers: [
+    /** Shown in footer as: Website by Nichanun (Luck), Zack, Ahmad — link optional per name */
+    websiteCredits: [
       {
-        name: 'Bibi',
-        link: 'https://github.com/bibschan',
-        type: 'software engineer',
+        name: 'Nichanun (Luck)',
+        link: 'https://www.linkedin.com/in/nichanun-pong/',
       },
-      { name: 'Jackie', link: 'https://jackieho.ca/', type: 'designer' },
+      { name: 'Zack', link: null },
       {
-        name: 'Luis',
-        link: 'https://github.com/luisher98',
-        type: 'software engineer',
-      },
-      {
-        name: 'Sophia',
-        link: 'https://github.com/Sophia-G-Chan',
-        type: 'software engineer',
+        name: 'Ahmad',
+        link: 'https://www.linkedin.com/in/ahmad-salempoor/',
       },
     ],
   },

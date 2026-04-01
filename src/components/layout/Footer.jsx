@@ -1,16 +1,34 @@
 "use client"
 import Image from "next/image";
-import React from "react";
+import React, { Suspense } from "react";
 import { useState } from "react";
+import { useSearchParams } from "next/navigation";
 import { AWS_EVENT_CONFIG } from "@/lib/eventConstants";
 
+/** Quick Links (Home / Schedule / Event Map) — Schedule + Event Map hidden for ?city=toronto */
+function FooterQuickLinks() {
+  const searchParams = useSearchParams();
+  const isToronto = searchParams?.get("city") === "toronto";
+  const items = [
+    { name: "Home", href: "/" },
+    ...(!isToronto
+      ? [
+          { name: "Schedule", href: "/#schedule", external: false },
+          { name: "Event Map", href: "/#event-map", external: false },
+        ]
+      : []),
+  ];
+  return (
+    <ul className="grid grid-cols-2 gap-x-4 gap-y-3 md:grid-cols-1 md:gap-y-3">
+      {items.map((item) => (
+        <NavItem key={item.name} {...item} />
+      ))}
+    </ul>
+  );
+}
+
 const Footer = () => {
-  const engineers = AWS_EVENT_CONFIG.team.webMembers.filter(
-    (item) => item.type === "software engineer"
-  );
-  const designers = AWS_EVENT_CONFIG.team.webMembers.filter(
-    (item) => item.type === "designer"
-  );
+  const websiteCredits = AWS_EVENT_CONFIG.team.websiteCredits;
   return (
     <footer className="bg-gray-900 text-white pt-32 md:pt-32 lg:pt-40 pb-12">
       <div className="container px-4 md:px-6 mx-auto">
@@ -49,15 +67,15 @@ const Footer = () => {
           {/* Quick Links */}
           <div>
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
-            <ul className="grid grid-cols-2 gap-x-4 gap-y-3 md:grid-cols-1 md:gap-y-3">
-              {[
-                { name: "Home", href: "/" },
-                { name: "Schedule", href: "/#schedule", external: false },
-                { name: "Event Map", href: "/#event-map", external: false },
-              ].map((item) => (
-                <NavItem key={item.name} {...item} />
-              ))}
-            </ul>
+            <Suspense
+              fallback={
+                <ul className="grid grid-cols-2 gap-x-4 gap-y-3 md:grid-cols-1 md:gap-y-3">
+                  <NavItem name="Home" href="/" />
+                </ul>
+              }
+            >
+              <FooterQuickLinks />
+            </Suspense>
           </div>
 
           {/* Resources */}
@@ -99,7 +117,7 @@ const Footer = () => {
             <h4 className="text-lg font-semibold mb-4">Previous Years</h4>
             <div className="grid grid-cols-2 gap-x-4 gap-y-2 md:grid-cols-1 md:gap-y-2">
               <a
-                href="/past-events/2024/"
+                href="/past-events/2024/index.html"
                 className="text-[#FF9900] hover:underline inline-flex items-center min-w-0"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -112,15 +130,12 @@ const Footer = () => {
                   fill="currentColor"
                   aria-hidden="true"
                 >
-                  <path
-                    fillRule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"
-                    clipRule="evenodd"
-                  />
+                  <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
+                  <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
                 </svg>
               </a>
               <a
-                href="/past-events/2025/"
+                href="/past-events/2025/index.html"
                 className="text-[#FF9900] hover:underline inline-flex items-center min-w-0"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -133,11 +148,8 @@ const Footer = () => {
                   fill="currentColor"
                   aria-hidden="true"
                 >
-                  <path
-                    fillRule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"
-                    clipRule="evenodd"
-                  />
+                  <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
+                  <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
                 </svg>
               </a>
             </div>
@@ -167,31 +179,26 @@ const Footer = () => {
             {AWS_EVENT_CONFIG.about}
           </p>
 
-          <div className="flex justify-center gap-4">
-            <p className="text-white text-xs mt-4 text-center font-semibold">
-              Website built by{" "}
-              {engineers.map((item, idx) => (
-                <span key={item.name}>
-                  <a href={item.link} className="hover:underline">
+          <p className="text-white text-xs mt-4 text-center font-semibold">
+            Website by{" "}
+            {websiteCredits.map((item, idx) => (
+              <span key={item.name}>
+                {item.link ? (
+                  <a
+                    href={item.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:underline"
+                  >
                     {item.name}
                   </a>
-                  {idx < engineers.length - 1 && ", "}
-                </span>
-              ))}
-            </p>
-
-            <p className="text-white text-xs mt-4 text-center font-semibold">
-              Designed by{" "}
-              {designers.map((item, idx) => (
-                <span key={item.name}>
-                  <a href={item.link} className="hover:underline">
-                    {item.name}
-                  </a>
-                  {idx < designers.length - 1 && ", "}
-                </span>
-              ))}
-            </p>
-          </div>
+                ) : (
+                  item.name
+                )}
+                {idx < websiteCredits.length - 1 && ", "}
+              </span>
+            ))}
+          </p>
 
         </div>
       </div>

@@ -10,28 +10,32 @@ export function NewSchedule() {
           Schedule
         </h2>
 
-        <div className='flex flex-col gap-4 sm:gap-6 w-full max-w-3xl mx-auto'>
+        <div className='flex flex-col gap-4 sm:gap-6 w-full'>
           {newSchedule.map((slot) => (
             <div
               key={`${slot.startTime}-${slot.endTime ?? ''}-${slot.activities?.[0] ?? ''}`}
-              className='grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-6 border-b border-gray-200 pb-3 sm:pb-4'>
-              <p className='font-bold text-sm sm:text-lg leading-snug'>
+              className='grid grid-cols-1 sm:grid-cols-[minmax(0,1fr)_minmax(0,2fr)] gap-2 sm:gap-8 border-b border-gray-200 pb-3 sm:pb-4'>
+              <p className='font-bold text-sm sm:text-lg leading-snug sm:min-w-0'>
                 {slot.endTime
                   ? `${slot.startTime} - ${slot.endTime}`
                   : slot.startTime}
               </p>
-              <ul className='text-left sm:text-right'>
-                {slot.activities.map((activity, idx) => (
-                  <li
-                    key={activity}
-                    className={
-                      idx === 0
-                        ? 'font-extrabold text-sm sm:text-lg leading-snug sm:whitespace-nowrap'
-                        : 'text-sm sm:text-base text-gray-600 leading-snug sm:whitespace-nowrap'
-                    }>
-                    {activity}
-                  </li>
-                ))}
+              <ul className='text-left sm:text-right min-w-0'>
+                {slot.activities.map((activity, idx) => {
+                  const primaryLines = slot.primaryLineCount ?? 1;
+                  const isPrimary = idx < primaryLines;
+                  return (
+                    <li
+                      key={`${slot.startTime}-${idx}-${activity}`}
+                      className={
+                        isPrimary
+                          ? 'font-extrabold text-sm sm:text-lg leading-snug break-words'
+                          : 'text-sm sm:text-base text-gray-600 leading-snug break-words'
+                      }>
+                      {activity}
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           ))}

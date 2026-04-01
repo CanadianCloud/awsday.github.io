@@ -70,12 +70,8 @@ export default function Activities() {
             There&apos;s a bit of something for everyone!
           </p>
         </div>
-      </div>
 
-      <About />
-
-      <div className='container px-4 md:px-6 m-auto max-w-6xl'>
-        <div className='grid grid-cols-2 md:grid-cols-3 gap-x-3 gap-y-8 sm:gap-x-4 sm:gap-y-10 md:gap-x-8 md:gap-y-12 text-center mt-8 mb-14 md:mb-20 lg:mb-24'>
+        <div className='grid grid-cols-2 md:grid-cols-3 gap-x-3 gap-y-8 sm:gap-x-4 sm:gap-y-10 md:gap-x-8 md:gap-y-12 text-center mt-2 mb-14 md:mb-20 lg:mb-24'>
           {activities.map(({ Icon, title, description, color }) => (
             <div
               key={title}
@@ -96,7 +92,11 @@ export default function Activities() {
             </div>
           ))}
         </div>
+      </div>
 
+      <About />
+
+      <div className='container px-4 md:px-6 m-auto max-w-6xl'>
         <div className='mt-4 md:mt-6'>
           <InstagramCarousel />
         </div>

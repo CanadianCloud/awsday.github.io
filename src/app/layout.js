@@ -1,7 +1,9 @@
+import { Suspense } from "react";
 import { Inter } from "next/font/google";
 import localFont from "next/font/local";
 import { cn } from "@/lib/utils";
 import { ScrollToHash } from "@/components/ScrollToHash";
+import CityModal from "@/components/layout/CityModal";
 const inter = Inter({ subsets: ["latin"] });
 import "./globals.css";
 
@@ -46,6 +48,9 @@ export default function Layout({ children }) {
         className={cn("antialiased", fontHeading.variable, fontBody.variable, fontHeroDate.variable, fontHeroRegular.variable)}
       >
         <ScrollToHash />
+        <Suspense fallback={null}>
+          <CityModal />
+        </Suspense>
         {children}
       </body>
     </html>

@@ -21,11 +21,12 @@ export default function Hero({ city }) {
         className="h-[70vh] md:h-[80vh] lg:min-h-[900px] w-[95%] rounded-3xl pt-0 md:pt-[5vh] lg:pt-[10vh] relative overflow-hidden"
         style={{ backgroundColor: "#BCDAFE" }}
       >
-        <HeroClouds />
+        <HeroClouds city={city} />
 
         <div className="relative z-10 pt-10 sm:pt-12 md:pt-0">
-          <h2 className="text-4xl md:text-6xl lg:text-8xl  font-heroDate font-extrabold mb-3 leading-none text-text-primary">
-            Join the Community for a Packed Event
+          <h2 className="text-4xl md:text-6xl lg:text-8xl font-heroDate font-extrabold mb-3 leading-tight text-text-primary">
+            <span className="block">Join the Community</span>
+            <span className="block">for a Packed Event</span>
           </h2>
         </div>
         <div className="relative z-20 px-1 max-w-8xl mx-auto pt-4 md:pt-8 pb-6">

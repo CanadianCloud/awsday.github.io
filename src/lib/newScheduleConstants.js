@@ -1,3 +1,4 @@
+/** Optional: number of activity lines that use the same primary (bold) style as the first line. Default 1. */
 export const newSchedule = [
   {
     startTime: "2:10 PM",
@@ -10,7 +11,7 @@ export const newSchedule = [
     startTime: "2:50 PM",
     activities: [
       "Doors Open to full venue",
-      "Community Experience sponsored by AWS opens",
+      "Experience areas open - sponsored by AWS",
     ],
   },
   {
@@ -25,27 +26,28 @@ export const newSchedule = [
     startTime: "3:20 PM",
     endTime: "3:50 PM",
     activities: ["Main Stage Session 1", "Community Stage Session 1"],
+    primaryLineCount: 2,
   },
   {
     startTime: "3:50 PM",
     endTime: "4:20 PM",
     activities: ["Main Stage Session 2", "Community Stage Session 2"],
+    primaryLineCount: 2,
   },
   {
     startTime: "4:20 PM",
     endTime: "4:50 PM",
-    activities: [
-      "Main Stage Session 3",
-      "Community Stage HackerRivals Round 1",
-    ],
+    activities: ["Main Stage Session 3", "Community Stage Session 3"],
+    primaryLineCount: 2,
   },
   {
     startTime: "4:50 PM",
     endTime: "5:30 PM",
     activities: [
-      "Main Stage Session 4 - 10min break after 25min talk",
-      "Community Stage Session 3 - 40min PANEL",
+      "Main Stage Session 4 - 10min break after",
+      "Community Stage Session 3 - Panel (Women Shaping the Future of Cloud & AI)",
     ],
+    primaryLineCount: 2,
   },
   {
     startTime: "5:30 PM",
@@ -54,11 +56,13 @@ export const newSchedule = [
       "Main Stage Session 5",
       "Community Stage HackerRivals Elimination Round",
     ],
+    primaryLineCount: 2,
   },
   {
     startTime: "6:00 PM",
     endTime: "6:30 PM",
     activities: ["Main Stage Session 6", "Community Stage Session 4"],
+    primaryLineCount: 2,
   },
   {
     startTime: "6:30 PM",
@@ -71,10 +75,11 @@ export const newSchedule = [
   {
     startTime: "7:00 PM",
     endTime: "7:30 PM",
-    activities: [
-      "HackerRivals Awards",
-      "Live on the Community Stage, streamed to the Main Stage",
-      "Closing Remarks",
-    ],
+    activities: ["HackerRivals Awards", "Closing Remarks"],
+  },
+  {
+    startTime: "7:30 PM",
+    endTime: "9:00 PM",
+    activities: ["After Party (invite only)"],
   },
 ];
