@@ -46,7 +46,7 @@ function HomeCity() {
   return (
     <>
       <Header />
-      <Hero />
+      <Hero city={city} />
       <main className="flex-1 bg-white -z-10">
         <Activities />
         {!isToronto && <NewSchedule />}

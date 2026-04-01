@@ -17,6 +17,8 @@ export const AWS_EVENT_CONFIG = {
   slogan: 'By the community, for the community',
   links: {
     tickets: 'https://luma.com/cloudsummit26',
+    /** Luma event when ?city=toronto (Vancouver uses `tickets`). */
+    ticketsToronto: 'https://luma.com/0xpa2rxj',
     ticketsCode: 'cloudsummit26',
     speakersApplication: 'https://tally.so/r/mVBZYy',
     speakersApplicationCode: 'mVBZYy',
@@ -488,3 +490,15 @@ export const AWS_EVENT_CONFIG = {
       'As a non-profit organization, our purpose is to bring together & educate the local tech community about the cloud and support our local community through charity.',
   },
 };
+
+/** Luma ticket URL for the hero/header (?city=toronto | vancouver / default). */
+export function getTicketsUrlForCity(city) {
+  return city === 'toronto'
+    ? AWS_EVENT_CONFIG.links.ticketsToronto
+    : AWS_EVENT_CONFIG.links.tickets;
+}
+
+/** Hero banner date line (?city=toronto | vancouver / default). */
+export function getBannerDateForCity(city) {
+  return city === 'toronto' ? 'August 29th, 2026' : 'MAY 1, 2026';
+}

@@ -1,8 +1,11 @@
+"use client";
 import HeroClouds from "./HeroClouds";
 import React, { useEffect } from "react";
-import { AWS_EVENT_CONFIG } from "@/lib/eventConstants";
+import { getBannerDateForCity, getTicketsUrlForCity } from "@/lib/eventConstants";
 
-export default function Hero() {
+export default function Hero({ city }) {
+  const ticketsUrl = getTicketsUrlForCity(city);
+  const bannerDate = getBannerDateForCity(city);
   useEffect(() => {
     // Load Tally script once
     const script = document.createElement("script");
@@ -33,13 +36,13 @@ export default function Hero() {
 
           {/* Main Date */}
           <h1 className="text-4xl md:text-4xl lg:text-6xl font-heroDate font-extrabold mb-3 leading-none text-text-primary">
-            MAY 1, 2026
+            {bannerDate}
           </h1>
 
           {/* Buttons */}
           <div className="flex flex-col sm:flex-row gap-3 justify-center items-center mb-6">
             <a
-              href={AWS_EVENT_CONFIG.links.tickets}
+              href={ticketsUrl}
               target="_blank"
               className="bg-[#FF9900] hover:bg-[#E88800] text-white text-sm md:text-xs lg:text-sm xl:text-base 2xl:text-[16px] font-heroDate font-extrabold p px-3 py-2 md:p-4 rounded-lg transition-colors whitespace-nowrap"
             >
