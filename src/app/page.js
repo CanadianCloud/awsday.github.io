@@ -11,6 +11,7 @@ import Footer from "@/components/layout/Footer";
 import About from "@/components/layout/About";
 import NonProfit from "@/components/layout/NonProfit";
 import Charity from "@/components/layout/Charity";
+import { CurrentSponsors } from "@/components/layout/CurrentSponsors";
 import Schedule from "@/components/layout/Schedule";
 import { NewSchedule } from "@/components/layout/NewSchedule";
 import EventMap from "@/components/layout/EventMap";
@@ -51,7 +52,11 @@ function HomeCity() {
         <Activities />
         {!isToronto && <NewSchedule />}
         <HackerRivals />
+
         <Charity city={city} />
+
+        <CurrentSponsors></CurrentSponsors>
+
         <Sponsors />
         <NonProfit showCpca={true}>{!isToronto && <EventMap />}</NonProfit>
       </main>
