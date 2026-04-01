@@ -16,7 +16,9 @@ export function NewSchedule() {
               key={`${slot.startTime}-${slot.endTime ?? ''}-${slot.activities?.[0] ?? ''}`}
               className='grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-6 border-b border-gray-200 pb-3 sm:pb-4'>
               <p className='font-bold text-sm sm:text-lg leading-snug'>
-                {slot.endTime ? `${slot.startTime} - ${slot.endTime}` : slot.startTime}
+                {slot.endTime
+                  ? `${slot.startTime} - ${slot.endTime}`
+                  : slot.startTime}
               </p>
               <ul className='text-left sm:text-right'>
                 {slot.activities.map((activity, idx) => (
