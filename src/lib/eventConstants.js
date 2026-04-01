@@ -502,3 +502,29 @@ export function getTicketsUrlForCity(city) {
 export function getBannerDateForCity(city) {
   return city === 'toronto' ? 'August 29th, 2026' : 'MAY 1, 2026';
 }
+
+/** Charity section copy + assets for "All Profits Donated to Local Charity" (?city=). */
+export function getCharitySectionContent(city) {
+  if (city === 'toronto') {
+    return {
+      paragraphs: [
+        'This event is 100% community-run and focused. No organizers are paid, and no organizers profit in any way from the event. We are proud to support local charities in each city, with a shared goal of raising $10,000.',
+        "Our Toronto charity partner is Eva's Initiatives for Homeless Youth (Eva's). Eva's provides shelter, transitional housing, and life-changing programs to help homeless and at-risk youth build brighter futures.",
+      ],
+      logoSrc: '/charity/Evas.png',
+      logoAlt: "Eva's Initiatives for Homeless Youth",
+      ctaHref: 'https://www.evas.ca/',
+      ctaLabel: "Learn More About Eva's",
+    };
+  }
+  return {
+    paragraphs: [
+      'This event is 100% community-run and focused. No organizers are paid, and no organizers profit in any way from the event. We are proud to support local charities in each city, with a shared goal of raising $10,000.',
+      'Our Vancouver charity partner is Union Gospel Mission (UGM). UGM provides meals, education, shelter, safe and affordable housing, recovery programs, and support services for individuals experiencing homelessness and addiction in Metro Vancouver and Mission. In 2025, the Vancouver community successfully raised $10,000 for UGM.',
+    ],
+    logoSrc: '/charity/unionGospelMission.svg',
+    logoAlt: 'Union Gospel Mission Logo',
+    ctaHref: 'https://ugm.ca/',
+    ctaLabel: 'Learn More About UGM',
+  };
+}
