@@ -12,7 +12,7 @@ export default function InteractiveMap({ onStageSelect, selectedStage }) {
         <div className='w-full h-full flex flex-col items-center py-7'>
             {/* Map Container - Desktop only interactive */}
             <div className="relative w-full md:w-1/2">
-                <img src='/venue/2025_AWSDay_Map_2ND_FLOOR.webp' alt='Venue Map' className='w-full h-full'/>
+                <img src='/event-map/floor-1.png' alt='Venue Map' className='w-full h-full'/>
 
                 {/* Interactive buttons - Desktop only */}
                 <div className="hidden md:block">

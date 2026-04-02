@@ -2,7 +2,16 @@
 
 import { useEffect, useRef } from 'react';
 
-export default function HeroClouds() {
+export default function HeroClouds({ city }) {
+  const isToronto = city === 'toronto';
+  const citySrc = isToronto
+    ? '/hero/toronto%20skyline.png'
+    : '/hero/hero-city.png';
+  const cityAlt = isToronto ? 'Toronto skyline' : 'City skyline';
+  /** Toronto asset is much taller than Vancouver at equal width; scale width so displayed height is slightly taller than hero-city.png. */
+  const cityImgClassName = isToronto
+    ? 'absolute bottom-4 z-10 left-1/2 -translate-x-1/2 w-[65%] xs:w-[46.1%] sm:w-[43.4%] md:w-[38.4%] lg:w-[33.2%] xl:w-[40.7%]'
+    : 'absolute bottom-4 z-10 left-1/2 -translate-x-1/2 w-[95%] xs:w-[90%] sm:w-[85%] md:w-[75%] lg:w-[65%] xl:w-[60%]';
   const cloudsRef = useRef(null);
   const cityRef = useRef(null);
 
@@ -73,9 +82,9 @@ export default function HeroClouds() {
       {/* City background with parallax */}
       <img
         ref={cityRef}
-        src="/hero/hero-city.png"
-        alt="City skyline"
-        className="absolute bottom-4 z-10 left-1/2 -translate-x-1/2 w-[95%] xs:w-[90%] sm:w-[85%] md:w-[75%] lg:w-[65%] xl:w-[60%]"
+        src={citySrc}
+        alt={cityAlt}
+        className={cityImgClassName}
       />
 
       {/* Bottom cloud - NO parallax */}

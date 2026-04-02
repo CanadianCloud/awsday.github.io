@@ -51,6 +51,14 @@
 
 html {
   scroll-behavior: smooth;
+  /* Offset anchor jumps so section titles sit below the sticky header (nav is up to ~115px on lg) */
+  scroll-padding-top: 6rem;
+}
+
+@media (min-width: 1024px) {
+  html {
+    scroll-padding-top: 8rem;
+  }
 }
 
 @keyframes slideright {

@@ -169,8 +169,8 @@ export default function MapAndSchedule() {
 
     // Map image based on selected floor
     const mapImage = selectedFloor === 5
-        ? '/venue/2025_AWSDay_Map_5TH_FLOOR.webp'
-        : '/venue/2025_AWSDay_Map_2ND_FLOOR.webp'
+        ? '/event-map/floor-2.png'
+        : '/event-map/floor-1.png'
 
     // Filter stages and buttons by floor
     const stagesOnFloor = stageButtons.filter(stage => stage.floor === selectedFloor)

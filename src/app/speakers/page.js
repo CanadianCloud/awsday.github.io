@@ -1,5 +1,5 @@
 "use client"
-import { useState } from 'react'
+import { Suspense, useState } from 'react'
 import { AWS_EVENT_CONFIG } from '@/lib/eventConstants'
 import { SPEAKERS } from '@/lib/speakersConstants'
 import Header from '@/components/layout/Header'
@@ -29,7 +29,9 @@ export default function SpeakersPage() {
 
   return (
     <div className="min-h-screen">
-      <Header />
+      <Suspense fallback={<div />}>
+        <Header />
+      </Suspense>
       <main className="flex-1 bg-white">
         <div className="pt-24 pb-16">
           <div className="container mx-auto px-4 md:px-6 max-w-7xl">
