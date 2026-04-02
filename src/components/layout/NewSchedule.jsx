@@ -22,8 +22,11 @@ export function NewSchedule() {
               </p>
               <ul className='text-left sm:text-right min-w-0'>
                 {slot.activities.map((activity, idx) => {
+                  const indices = slot.primaryLineIndices;
                   const primaryLines = slot.primaryLineCount ?? 1;
-                  const isPrimary = idx < primaryLines;
+                  const isPrimary = Array.isArray(indices)
+                    ? indices.includes(idx)
+                    : idx < primaryLines;
                   return (
                     <li
                       key={`${slot.startTime}-${idx}-${activity}`}
