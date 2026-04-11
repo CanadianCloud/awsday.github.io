@@ -1,20 +1,6 @@
 /** Optional: `primaryLineIndices` — which activity lines use bold (overrides `primaryLineCount`). */
 export const newSchedule = [
   {
-    startTime: '2:10 PM',
-    activities: [
-      'Registration Opens',
-      'Networking space (full venue isn’t open yet)',
-    ],
-  },
-  {
-    startTime: '2:50 PM',
-    activities: [
-      'Doors Open to full venue',
-      'Experience areas open - sponsored by AWS',
-    ],
-  },
-  {
     startTime: '3:00 PM',
     endTime: '3:20 PM',
     activities: [
