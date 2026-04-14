@@ -47,6 +47,11 @@ export const currentSponsors = [
     alt: 'ISACA logo',
   },
   {
+    name: 'Defang',
+    logo: '/sponsors/defang.svg',
+    alt: 'Defang logo',
+  },
+  {
     name: 'Fortinet',
     logo: '/sponsors/Fortinet_Logo.png',
     alt: 'Fortinet logo',
