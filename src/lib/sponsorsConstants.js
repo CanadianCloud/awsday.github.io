@@ -47,6 +47,11 @@ export const currentSponsors = [
     alt: 'ISACA logo',
   },
   {
+    name: 'OpenBao',
+    logo: '/sponsors/OpenBao-white.png',
+    alt: 'OpenBao logo',
+  },
+  {
     name: 'Defang',
     logo: '/sponsors/defang.svg',
     alt: 'Defang logo',
