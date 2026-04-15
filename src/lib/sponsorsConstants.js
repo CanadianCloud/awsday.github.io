@@ -45,30 +45,42 @@ export const currentSponsors = [
     name: 'ISACA',
     logo: '/sponsors/ISACA.png',
     alt: 'ISACA logo',
+    website: 'https://engage.isaca.org/vancouverchapter/home',
   },
   {
     name: 'OpenBao',
     logo: '/sponsors/OpenBao-white.png',
     alt: 'OpenBao logo',
+    website: 'https://www.openbao.org/',
+  },
+  {
+    name: 'Northeastern University',
+    logo: '/sponsors/Northeastern_University_Logo.png',
+    alt: 'Northeastern University logo',
+    website: 'https://www.northeastern.edu/',
   },
   {
     name: 'Defang',
     logo: '/sponsors/defang.svg',
     alt: 'Defang logo',
+    website: 'https://www.defang.io/',
   },
   {
     name: 'Fortinet',
     logo: '/sponsors/Fortinet_Logo.png',
     alt: 'Fortinet logo',
+    website: 'https://www.fortinet.com/',
   },
   {
     name: 'Hacker Rivals',
     logo: '/sponsors/Logo-Oct25-White.png',
     alt: 'Hacker Rivals logo',
+    website: 'https://hackerrivals.com/',
   },
   {
     name: 'Habilelabs',
     logo: '/sponsors/habilelabs%20logo.svg',
     alt: 'Habilelabs logo',
+    website: 'https://www.habilelabs.io/',
   },
 ];
