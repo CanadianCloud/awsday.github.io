@@ -51,6 +51,7 @@ function HomeCity() {
       <main className='flex-1 bg-white -z-10'>
         <Activities />
         {!isToronto && <NewSchedule />}
+        {!isToronto && <EventMap />}
         <HackerRivals />
 
         <Charity city={city} />
@@ -58,7 +59,7 @@ function HomeCity() {
         {!isToronto && <CurrentSponsors></CurrentSponsors>}
 
         <Sponsors />
-        <NonProfit showCpca={true}>{!isToronto && <EventMap />}</NonProfit>
+        <NonProfit showCpca={true} />
       </main>
       <Footer />
     </>
