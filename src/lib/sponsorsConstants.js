@@ -42,6 +42,24 @@ export const SPONSORS = [
 
 export const currentSponsors = [
   {
+    name: 'VanRuby',
+    logo: '/sponsors/vanruby-trans.png',
+    alt: 'VanRuby logo',
+    website: 'https://vanruby.org/',
+  },
+  {
+    name: 'Elastic',
+    logo: '/sponsors/logo-elastic-horizontal-color.png',
+    alt: 'Elastic logo',
+    website: 'https://www.elastic.co/',
+  },
+  {
+    name: 'ASIS International',
+    logo: '/sponsors/asis-trans.png',
+    alt: 'ASIS International logo',
+    website: 'https://www.asisonline.org/',
+  },
+  {
     name: 'ISACA',
     logo: '/sponsors/ISACA.png',
     alt: 'ISACA logo',
