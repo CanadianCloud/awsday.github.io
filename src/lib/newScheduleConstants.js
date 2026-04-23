@@ -31,7 +31,7 @@ export const newSchedule = [
   {
     startTime: '3:50 PM',
     endTime: '4:20 PM',
-    activities: ['Main Stage: Panel, Sponsored by Fortinet', 'Community Stage: Niko Smeds'],
+    activities: ['Main Stage: Panel, Sponsored by Fortinet', 'Community Stage: Nitin Gandhi'],
     primaryLineCount: 2,
   },
   {
@@ -58,7 +58,7 @@ export const newSchedule = [
     startTime: '5:30 PM',
     endTime: '6:00 PM',
     activities: [
-      'Main Stage: Session 5',
+      'Main Stage: Niko Smeds',
       'Community Stage: HackerRivals Round 2 Elimination Round',
     ],
     primaryLineCount: 2,
