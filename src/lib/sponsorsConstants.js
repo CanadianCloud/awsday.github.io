@@ -101,4 +101,10 @@ export const currentSponsors = [
     alt: 'Habilelabs logo',
     website: 'https://www.habilelabs.io/',
   },
+  {
+    name: 'Secretz',
+    logo: '/sponsors/secretz.png',
+    alt: 'Secretz logo',
+    website: 'https://www.secretz.io/',
+  },
 ];

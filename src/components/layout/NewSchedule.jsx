@@ -35,7 +35,23 @@ export function NewSchedule() {
                           ? 'font-extrabold text-sm sm:text-lg leading-snug break-words'
                           : 'text-sm sm:text-base text-gray-600 leading-snug break-words'
                       }>
-                      {activity}
+                      {activity.split(/(https?:\/\/[^\s]+|www\.[^\s]+)/g).map((part, i) => {
+                        const isUrl = /^(https?:\/\/[^\s]+|www\.[^\s]+)$/.test(part);
+                        if (isUrl) {
+                          const href = part.startsWith('www.') ? `http://${part}` : part;
+                          return (
+                            <a
+                              key={i}
+                              href={href}
+                              target='_blank'
+                              rel='noopener noreferrer'
+                              className='text-blue-600 hover:underline'>
+                              {part}
+                            </a>
+                          );
+                        }
+                        return part;
+                      })}
                     </li>
                   );
                 })}

@@ -4,7 +4,7 @@ export const newSchedule = [
     startTime: '2:15 PM',
     activities: [
       'Registration Opens',
-      'Networking space available (full venue not yet open)',
+      'Networking space available (full venue not yet open - food provided)',
     ],
   },
   {
@@ -25,49 +25,79 @@ export const newSchedule = [
   {
     startTime: '3:20 PM',
     endTime: '3:50 PM',
-    activities: ['Main Stage: Gabriel Velazquez Lopez', 'Community Stage: Egina Malaj'],
-    primaryLineCount: 2,
+    activities: [
+      'Main Stage: Gabriel Velazquez Lopez',
+      'The One Certification That Works on Every Cloud',
+      'Community Stage: Egina Malaj',
+      'Simplifying the design and deployment of Agentic AI systems at scale',
+    ],
+    primaryLineIndices: [0, 2],
   },
   {
     startTime: '3:50 PM',
     endTime: '4:20 PM',
-    activities: ['Main Stage: Panel, Sponsored by Fortinet', 'Community Stage: Nitin Gandhi'],
-    primaryLineCount: 2,
+    activities: [
+      'Main Stage: Panel, Sponsored by Fortinet',
+      'Panel (AI Beyond the Buzz: Real Use Cases, Real Concerns, Real Conversations)',
+      'Community Stage: HackerRivals Round 1',
+      'Fast Paced Hackathon learn more at www.HackerRivals.com',
+    ],
+    primaryLineIndices: [0, 2],
+  },
+  {
+    startTime: '4:00 PM',
+    endTime: '6.30 PM',
+    activities: [
+      'AWS Workshop: Introduction to Claude Code on AWS',
+      'Join waitlist here https://luma.com/awsworkshop',
+    ],
+    primaryLineCount: 1,
   },
   {
     startTime: '4:20 PM',
     endTime: '4:50 PM',
     activities: [
       'Main Stage: Jason Mayes',
-      'Community Stage: HackerRivals Round 1',
+      'Vibing with Antigravity for custom Web AI solutions',
+      'Community Stage: Nitin Gandhi',
+      'Maximizing Cloud Value: Cost Engineering Playbooks',
     ],
-    primaryLineCount: 2,
+    primaryLineIndices: [0, 2],
   },
   {
     startTime: '4:50 PM',
     endTime: '5:30 PM',
     activities: [
       'Main Stage: Morgan Foster',
+      'The Illustrated Primer to GenAI Networking',
       '10 min break after',
       'Community Stage: Panel',
       'Panel (Women Shaping the Future of Cloud & AI)',
     ],
-    primaryLineIndices: [0, 2],
+    primaryLineIndices: [0, 3],
   },
   {
     startTime: '5:30 PM',
     endTime: '6:00 PM',
     activities: [
       'Main Stage: Niko Smeds',
+      'The Cloud Bill Nobody Could Explain',
       'Community Stage: HackerRivals Round 2 Elimination Round',
+      'Fast Paced Hackathon learn more at www.HackerRivals.com',
     ],
-    primaryLineCount: 2,
+    primaryLineIndices: [0, 2],
   },
   {
     startTime: '6:00 PM',
     endTime: '6:30 PM',
-    activities: ['Main Stage: Adina Gray', 'Community Stage: Lightning Talks'],
-    primaryLineCount: 2,
+    activities: [
+      'Main Stage: Adina Gray',
+      'Who Adopts AI First and Who Struggles to Keep Up',
+      'Community Stage: Lightning Talks',
+      'HabileLabs',
+      'Defang',
+    ],
+    primaryLineIndices: [0, 2],
   },
   {
     startTime: '6:30 PM',
@@ -85,11 +115,15 @@ export const newSchedule = [
       'Live on the Main Stage: streamed to the Community Stage',
       'Closing Remarks',
     ],
-    primaryLineIndices: [0],
+    primaryLineIndices: [0, 2],
   },
   {
     startTime: '7:30 PM',
     endTime: '9:00 PM',
-    activities: ['After Party (invite only)'],
+    activities: [
+      'After Party (limited space)',
+      'Join Waitlist Here https://luma.com/csparty',
+    ],
+    primaryLineCount: 1,
   },
 ];
