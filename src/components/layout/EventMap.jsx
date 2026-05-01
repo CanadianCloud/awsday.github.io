@@ -97,6 +97,10 @@ const LEGEND_ITEMS_BY_FLOOR = {
       iconSrc: '/event-map/icons/cloud-chamber.png',
       title: 'Cloud chamber',
     },
+    {
+      iconSrc: '/event-map/icons/Workshop.png',
+      title: 'Workshop',
+    },
   ],
 };
 
