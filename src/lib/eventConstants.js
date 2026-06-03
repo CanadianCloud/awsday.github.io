@@ -22,8 +22,8 @@ export const AWS_EVENT_CONFIG = {
     ticketsCode: 'cloudsummit26',
     speakersApplication: 'https://tally.so/r/mVBZYy',
     speakersApplicationCode: 'mVBZYy',
-    volunteerApplication: 'https://tally.so/r/waPdMy',
-    sponsors: 'https://tally.so/r/mR6zPQ',
+    volunteerApplication: 'https://tally.so/r/eqv4A0',
+    sponsors: 'https://tally.so/r/MeMBYX',
     awsUserGroup: 'https://www.awsusergroups.com/',
     social: {
       instagram: 'https://www.instagram.com/canadiancloudninja/',
@@ -60,7 +60,7 @@ export const AWS_EVENT_CONFIG = {
         type: 'phase1',
         descrp: 'Interested in volunteering for AWS Community Day',
         button: 'Learn More about Volunteer Opportunities',
-        link: 'https://tally.so/r/waPdMy',
+        link: 'https://tally.so/r/eqv4A0',
       },
     },
     sponsors: {
