@@ -59,7 +59,7 @@ export default function Activities() {
 
   return (
     <section
-      className='w-full pt-16 md:pt-24 pb-24 md:pb-32 relative overflow-hidden bg-white'
+      className='w-full pt-8 md:pt-12 pb-24 md:pb-32 relative overflow-hidden bg-white'
       id='activities'>
       <div className='container px-4 md:px-6 m-auto max-w-6xl flex flex-col items-center'>
         <div className='mb-10 '>
@@ -99,23 +99,6 @@ export default function Activities() {
       <div className='container px-4 md:px-6 m-auto max-w-6xl'>
         <div className='mt-4 md:mt-6'>
           <InstagramCarousel />
-        </div>
-        <div className='flex flex-col items-center pb-8'>
-          <h4 className='font-bold uppercase text-xl px-2 text-center md:text-5xl'>
-            {AWS_EVENT_CONFIG.sections.about.motto}
-          </h4>
-          <p className='mb-4'>{AWS_EVENT_CONFIG.sections.about.cta.descrp}</p>
-          <div className='flex gap-4 flex-wrap justify-center'>
-            <button
-              data-tally-open={AWS_EVENT_CONFIG.sections.about.cta.link
-                .split('/')
-                .pop()}
-              data-tally-width='800'
-              data-tally-layout='modal'
-              className='md:h-10 px-4 py-1 md:py-2 rounded text-white bg-[#333E48] hover:bg-[#E88800] transition-colors'>
-              Learn More About Volunteer Opportunities
-            </button>
-          </div>
         </div>
       </div>
     </section>

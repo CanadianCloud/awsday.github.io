@@ -5,13 +5,13 @@ import { useState } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { AWS_EVENT_CONFIG } from '@/lib/eventConstants';
 
-/** Quick Links (Home / Schedule / Event Map) — Schedule + Event Map hidden for ?city=toronto */
+/** Quick Links (Home / Schedule / Event Map) — Schedule + Event Map shown for ?city=vancouver */
 function FooterQuickLinks() {
   const searchParams = useSearchParams();
-  const isToronto = searchParams?.get('city') === 'toronto';
+  const isVancouver = searchParams?.get('city') === 'vancouver';
   const items = [
     { name: 'Home', href: '/' },
-    ...(!isToronto
+    ...(isVancouver
       ? [
           { name: 'Schedule', href: '/#schedule', external: false },
           { name: 'Event Map', href: '/#event-map', external: false },
@@ -24,6 +24,56 @@ function FooterQuickLinks() {
         <NavItem key={item.name} {...item} />
       ))}
     </ul>
+  );
+}
+
+/** Previous Years Links — Includes Vancouver 2026 when viewing Toronto */
+function PreviousYears() {
+  const searchParams = useSearchParams();
+  const isVancouver = searchParams?.get('city') === 'vancouver';
+
+  return (
+    <div className='grid grid-cols-2 gap-x-4 gap-y-2 md:grid-cols-1 md:gap-y-2'>
+      {!isVancouver && (
+        <a
+          href='/?city=vancouver'
+          className='text-[#FF9900] hover:underline inline-flex items-center min-w-0'>
+          Vancouver 2026
+        </a>
+      )}
+      <a
+        href='/past-events/2025/index.html'
+        className='text-[#FF9900] hover:underline inline-flex items-center min-w-0'
+        target='_blank'
+        rel='noopener noreferrer'>
+        2025 Event
+        <svg
+          xmlns='http://www.w3.org/2000/svg'
+          className='h-4 w-4 ml-1 shrink-0'
+          viewBox='0 0 20 20'
+          fill='currentColor'
+          aria-hidden='true'>
+          <path d='M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z' />
+          <path d='M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z' />
+        </svg>
+      </a>
+      <a
+        href='/past-events/2024/index.html'
+        className='text-[#FF9900] hover:underline inline-flex items-center min-w-0'
+        target='_blank'
+        rel='noopener noreferrer'>
+        2024 Event
+        <svg
+          xmlns='http://www.w3.org/2000/svg'
+          className='h-4 w-4 ml-1 shrink-0'
+          viewBox='0 0 20 20'
+          fill='currentColor'
+          aria-hidden='true'>
+          <path d='M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z' />
+          <path d='M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z' />
+        </svg>
+      </a>
+    </div>
   );
 }
 
@@ -115,40 +165,27 @@ const Footer = () => {
             </ul>
 
             <h4 className='text-lg font-semibold mb-4'>Previous Years</h4>
-            <div className='grid grid-cols-2 gap-x-4 gap-y-2 md:grid-cols-1 md:gap-y-2'>
-              <a
-                href='/past-events/2024/index.html'
-                className='text-[#FF9900] hover:underline inline-flex items-center min-w-0'
-                target='_blank'
-                rel='noopener noreferrer'>
-                2024 Event
-                <svg
-                  xmlns='http://www.w3.org/2000/svg'
-                  className='h-4 w-4 ml-1 shrink-0'
-                  viewBox='0 0 20 20'
-                  fill='currentColor'
-                  aria-hidden='true'>
-                  <path d='M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z' />
-                  <path d='M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z' />
-                </svg>
-              </a>
-              <a
-                href='/past-events/2025/index.html'
-                className='text-[#FF9900] hover:underline inline-flex items-center min-w-0'
-                target='_blank'
-                rel='noopener noreferrer'>
-                2025 Event
-                <svg
-                  xmlns='http://www.w3.org/2000/svg'
-                  className='h-4 w-4 ml-1 shrink-0'
-                  viewBox='0 0 20 20'
-                  fill='currentColor'
-                  aria-hidden='true'>
-                  <path d='M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z' />
-                  <path d='M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z' />
-                </svg>
-              </a>
-            </div>
+            <Suspense
+              fallback={
+                <div className='grid grid-cols-2 gap-x-4 gap-y-2 md:grid-cols-1 md:gap-y-2'>
+                  <a
+                    href='/past-events/2024/index.html'
+                    className='text-[#FF9900] hover:underline inline-flex items-center min-w-0'
+                    target='_blank'
+                    rel='noopener noreferrer'>
+                    2024 Event
+                  </a>
+                  <a
+                    href='/past-events/2025/index.html'
+                    className='text-[#FF9900] hover:underline inline-flex items-center min-w-0'
+                    target='_blank'
+                    rel='noopener noreferrer'>
+                    2025 Event
+                  </a>
+                </div>
+              }>
+              <PreviousYears />
+            </Suspense>
           </div>
         </div>
 

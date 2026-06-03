@@ -15,22 +15,22 @@ export default function Header() {
 
   const cityFromUrl = searchParams?.get('city');
   const [selectedCity, setSelectedCity] = useState(
-    cityFromUrl === 'toronto' ? 'toronto' : 'vancouver',
+    cityFromUrl === 'vancouver' ? 'vancouver' : 'toronto',
   );
   const logoSrc =
-    selectedCity === 'toronto'
-      ? '/header-logo-toronto.png'
-      : '/header-logo-vancouver.png';
+    selectedCity === 'vancouver'
+      ? '/header-logo-vancouver.png'
+      : '/header-logo-toronto.png';
   const logoAlt =
-    selectedCity === 'toronto'
-      ? 'AWS Community Day Toronto'
-      : 'AWS Community Day Vancouver';
+    selectedCity === 'vancouver'
+      ? 'AWS Community Day Vancouver'
+      : 'AWS Community Day Toronto';
   const ticketsHref = getTicketsUrlForCity(selectedCity);
   useTally();
 
   useEffect(() => {
     // Keep dropdown synced when URL changes (back/forward).
-    setSelectedCity(cityFromUrl === 'toronto' ? 'toronto' : 'vancouver');
+    setSelectedCity(cityFromUrl === 'vancouver' ? 'vancouver' : 'toronto');
   }, [cityFromUrl]);
 
   useEffect(() => {
@@ -83,7 +83,7 @@ export default function Header() {
 
           {/* Desktop Menu */}
           <div className='hidden md:flex items-center gap-2 md:gap-3 lg:gap-6 xl:gap-8 2xl:gap-12'>
-            <div className='flex items-center gap-3'>
+            {/* <div className='flex items-center gap-3'>
               <span className='text-sm font-body font-extrabold text-gray-700 whitespace-nowrap'>
                 Select Location:
               </span>
@@ -92,10 +92,10 @@ export default function Header() {
                 onChange={handleCityChange}
                 className='bg-black/70 text-white border border-white/20 rounded-xl px-3 py-1.5 text-sm md:text-base font-heroDate font-extrabold cursor-pointer'
                 aria-label='Select location'>
-                <option value='vancouver'>Vancouver</option>
                 <option value='toronto'>Toronto</option>
+                <option value='vancouver'>Vancouver</option>
               </select>
-            </div>
+            </div> */}
             <a
               href={ticketsHref}
               target='_blank'
@@ -105,7 +105,7 @@ export default function Header() {
           </div>
 
           {/* Mobile location selector (always visible; menu overlay stays just the links) */}
-          <div className='md:hidden flex items-center gap-2'>
+          {/* <div className='md:hidden flex items-center gap-2'>
             <select
               value={selectedCity}
               onChange={handleCityChange}
@@ -114,7 +114,7 @@ export default function Header() {
               <option value='vancouver'>Vancouver</option>
               <option value='toronto'>Toronto</option>
             </select>
-          </div>
+          </div> */}
 
           {/* Mobile Menu Button */}
           <button

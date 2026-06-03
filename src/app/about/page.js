@@ -11,7 +11,7 @@ import { useSearchParams } from 'next/navigation';
 function AboutCity() {
   const searchParams = useSearchParams();
   const city = searchParams?.get('city');
-  const isToronto = city === 'toronto';
+  const isVancouver = city === 'vancouver';
 
   return (
     <div className=''>
@@ -29,8 +29,8 @@ function AboutCity() {
             </div> */}
           </div>
         </div>
-        {!isToronto && <MapAndSchedule />}
-        <NonProfit showCpca={true}>{!isToronto && <EventMap />}</NonProfit>
+        {isVancouver && <MapAndSchedule />}
+        <NonProfit showCpca={true}>{isVancouver && <EventMap />}</NonProfit>
       </main>
       <Footer />
     </div>

@@ -3,15 +3,15 @@
 import { useEffect, useRef } from 'react';
 
 export default function HeroClouds({ city }) {
-  const isToronto = city === 'toronto';
-  const citySrc = isToronto
-    ? '/hero/toronto%20skyline.png'
-    : '/hero/hero-city.png';
-  const cityAlt = isToronto ? 'Toronto skyline' : 'City skyline';
+  const isVancouver = city === 'vancouver';
+  const citySrc = isVancouver
+    ? '/hero/hero-city.png'
+    : '/hero/toronto%20skyline.png';
+  const cityAlt = isVancouver ? 'Vancouver skyline' : 'Toronto skyline';
   /** Toronto asset is much taller than Vancouver at equal width; scale width so displayed height is slightly taller than hero-city.png. */
-  const cityImgClassName = isToronto
-    ? 'absolute bottom-4 z-10 left-1/2 -translate-x-1/2 w-[65%] xs:w-[46.1%] sm:w-[43.4%] md:w-[38.4%] lg:w-[33.2%] xl:w-[40.7%]'
-    : 'absolute bottom-4 z-10 left-1/2 -translate-x-1/2 w-[95%] xs:w-[90%] sm:w-[85%] md:w-[75%] lg:w-[65%] xl:w-[60%]';
+  const cityImgClassName = isVancouver
+    ? 'absolute bottom-4 z-10 left-1/2 -translate-x-1/2 w-[95%] xs:w-[90%] sm:w-[85%] md:w-[75%] lg:w-[65%] xl:w-[60%]'
+    : 'absolute bottom-4 z-10 left-1/2 -translate-x-1/2 w-[65%] xs:w-[46.1%] sm:w-[43.4%] md:w-[38.4%] lg:w-[33.2%] xl:w-[40.7%]';
   const cloudsRef = useRef(null);
   const cityRef = useRef(null);
 

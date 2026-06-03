@@ -30,15 +30,12 @@ export default function CityModal() {
       return;
     }
 
-    const t = window.setTimeout(() => {
-      setOpen(true);
-      document.body.style.overflow = 'hidden';
-    }, 300);
-
-    return () => {
-      window.clearTimeout(t);
-    };
-  }, [search]);
+    // Default to Toronto - set city parameter without showing modal
+    const defaultParams = new URLSearchParams(searchParams?.toString() || '');
+    defaultParams.set('city', 'toronto');
+    sessionStorage.setItem(CITY_SELECTION_KEY, 'true');
+    router.replace(`${pathname}?${defaultParams.toString()}`, { scroll: false });
+  }, [search, pathname, router, searchParams]);
 
   useEffect(() => {
     if (!open) {
