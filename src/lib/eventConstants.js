@@ -47,7 +47,7 @@ export const AWS_EVENT_CONFIG = {
           feature: 'Sponsors',
         },
         {
-          stat: '7',
+          stat: '14',
           feature: 'Inspiring Talks',
         },
         {
