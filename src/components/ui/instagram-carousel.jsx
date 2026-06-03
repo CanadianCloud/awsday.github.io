@@ -47,11 +47,11 @@ export function InstagramCarousel() {
                 <Link className="w-full" href={imageUrl} target="_blank">
                   <Card className="border-0 shadow-lg overflow-hidden">
                     <CardContent className="p-0">
-                      <div className="relative">
+                      <div className="relative aspect-square">
                         <img
                           src={`./Instagram/ig${Number(index) + 1}.jpg`}
                           alt={`Instagram image ${index + 1}`}
-                          className="object-fill transition-transform hover:scale-105 duration-300"
+                          className="w-full h-full object-cover transition-transform hover:scale-105 duration-300"
                         />
                       </div>
                     </CardContent>

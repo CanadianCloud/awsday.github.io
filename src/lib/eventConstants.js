@@ -18,7 +18,7 @@ export const AWS_EVENT_CONFIG = {
   links: {
     tickets: 'https://luma.com/cloudsummit26',
     /** Luma event when ?city=toronto (Vancouver uses `tickets`). */
-    ticketsToronto: 'https://luma.com/0xpa2rxj',
+    ticketsToronto: 'https://luma.com/awsday26',
     ticketsCode: 'cloudsummit26',
     speakersApplication: 'https://tally.so/r/mVBZYy',
     speakersApplicationCode: 'mVBZYy',
@@ -189,17 +189,17 @@ export const AWS_EVENT_CONFIG = {
         },
         {
           name: 'Become a Volunteer',
-          href: 'https://tally.so/r/waPdMy',
+          href: 'https://tally.so/r/eqv4A0',
           external: true,
         },
         {
           name: 'Become a Sponsor',
-          href: 'https://tally.so/r/mR6zPQ',
+          href: 'https://tally.so/r/MeMBYX',
           external: true,
         },
         {
           name: 'Call for Speakers',
-          href: 'https://tally.so/r/rjBeN5',
+          href: 'https://tally.so/r/ODkv7g',
           external: true,
         },
         {

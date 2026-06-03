@@ -11,6 +11,8 @@ import Footer from '@/components/layout/Footer';
 import About from '@/components/layout/About';
 import NonProfit from '@/components/layout/NonProfit';
 import Charity from '@/components/layout/Charity';
+import CommunitySection from '@/components/layout/CommunitySection';
+import ActionButtons from '@/components/layout/ActionButtons';
 import { CurrentSponsors } from '@/components/layout/CurrentSponsors';
 import Schedule from '@/components/layout/Schedule';
 import { NewSchedule } from '@/components/layout/NewSchedule';
@@ -48,10 +50,12 @@ function HomeCity() {
     <>
       <Header />
       <Hero city={city} />
+      <ActionButtons />
       <main className='flex-1 bg-white -z-10'>
         <Activities />
         {isVancouver && <NewSchedule />}
         {isVancouver && <EventMap />}
+        <CommunitySection />
         <HackerRivals />
 
         <Charity city={city} />
