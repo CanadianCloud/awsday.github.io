@@ -42,7 +42,7 @@ const useWindowSize = () => {
 function HomeCity() {
   const searchParams = useSearchParams();
   const city = searchParams?.get('city');
-  const isToronto = city === 'toronto';
+  const isVancouver = city === 'vancouver';
 
   return (
     <>
@@ -50,13 +50,13 @@ function HomeCity() {
       <Hero city={city} />
       <main className='flex-1 bg-white -z-10'>
         <Activities />
-        {!isToronto && <NewSchedule />}
-        {!isToronto && <EventMap />}
+        {isVancouver && <NewSchedule />}
+        {isVancouver && <EventMap />}
         <HackerRivals />
 
         <Charity city={city} />
 
-        {!isToronto && <CurrentSponsors></CurrentSponsors>}
+        {isVancouver && <CurrentSponsors></CurrentSponsors>}
 
         <Sponsors />
         <NonProfit showCpca={true} />
