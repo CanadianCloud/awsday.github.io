@@ -17,6 +17,7 @@ import { CurrentSponsors } from '@/components/layout/CurrentSponsors';
 import Schedule from '@/components/layout/Schedule';
 import { NewSchedule } from '@/components/layout/NewSchedule';
 import EventMap from '@/components/layout/EventMap';
+import CloudSchedule from '@/components/layout/CloudSchedule';
 
 const useWindowSize = () => {
   const [windowSize, setWindowSize] = useState({
@@ -53,6 +54,7 @@ function HomeCity() {
       <ActionButtons />
       <main className='flex-1 bg-white -z-10'>
         <Activities />
+        <CloudSchedule />
         {isVancouver && <NewSchedule />}
         {isVancouver && <EventMap />}
         <CommunitySection />
