@@ -3,7 +3,10 @@
     "allow": [
       "Bash(npm run build)",
       "Bash(npm run dev)",
-      "Bash(python3 -m json.tool)"
+      "Bash(python3 -m json.tool)",
+      "Bash(python3 -c \"from PIL import Image; img = Image.open\\('/Users/bibianasouza/Desktop/repositories/awsday.github.io/awsday.github.io/public/sponsors/pulsarops.png'\\); print\\(img.size\\)\")",
+      "Bash(python3 *)",
+      "Bash(git *)"
     ],
     "deny": [],
     "ask": []
