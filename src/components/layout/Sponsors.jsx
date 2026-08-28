@@ -54,7 +54,7 @@ const sponsorTiers = [
     cardBg: "bg-black hover:bg-black",
     nameColor: "text-white",
     sponsors: [
-      { name: "OpsFabric", url: "http://www.ops-fabric.com", logo: "/sponsors/opsfabric.png" },
+      { name: "OpsFabric", url: "https://opsfabric.ai/", logo: "/sponsors/opsfabric.png" },
       { name: "Orbitra", url: "https://getorbitra.com/", logo: "/sponsors/orbitra.png" },
     ],
     logoSize: "h-24",
